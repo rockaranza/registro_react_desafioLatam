@@ -8,6 +8,7 @@ const Formulario = () => {
   const [contrasena, setContrasena] = useState('');
   const [confirmarContrasena, setConfirmarContrasena] = useState('');
   const [mensajeError, setMensajeError] = useState('');
+  const [tipo, setTipo] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -44,13 +45,14 @@ const Formulario = () => {
 
     if (contrasena !== confirmarContrasena) {
       setMensajeError('Las contraseñas no coinciden');
+      setTipo('danger');
+      return;
+    }else{
+      setMensajeError('Registro exitoso');
+      setTipo('success');
       return;
     }
 
-    // Si la validación es correcta, aquí se procesaría el registro del usuario
-
-    setMensajeError(''); // Limpiar el mensaje de error
-    // Mostrar un mensaje de éxito utilizando un componente Alert o una simple alerta
   };
 
   return (
@@ -111,7 +113,7 @@ const Formulario = () => {
         </div>
         <button type="submit" className="btn my-3 w-100 btn-color">Registrarse</button>
       </form>
-      {mensajeError && <Alert type="danger" mensaje={mensajeError} />}
+      {mensajeError && <Alert tipo={tipo} mensaje={mensajeError} />}
     </div>
   );
 };

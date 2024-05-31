@@ -1,4 +1,3 @@
-// components/Registro.js
 import React from 'react';
 import SocialButton from './SocialButton';
 import Formulario from './Formulario';

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -11,8 +10,5 @@ const SocialButton = ({ icon }) => {
   );
 };
 
-SocialButton.propTypes = {
-  icon: PropTypes.string.isRequired,
-};
 
 export default SocialButton;
